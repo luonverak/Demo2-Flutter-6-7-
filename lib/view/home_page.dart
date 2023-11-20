@@ -24,38 +24,36 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: tabItems[_selectedIndex],
-        ),
-        bottomNavigationBar: FlashyTabBar(
-          animationCurve: Curves.linear,
-          selectedIndex: _selectedIndex,
-          iconSize: 35,
-          showElevation: true,
-          onItemSelected: (index) => setState(() {
-            _selectedIndex = index;
-          }),
-          items: [
-            FlashyTabBarItem(
-              icon: const Icon(Icons.home),
-              title: const Text('Home'),
-            ),
-            FlashyTabBarItem(
-              icon: const Icon(Icons.search),
-              title: const Text('Search'),
-            ),
-            FlashyTabBarItem(
-              icon: const Icon(Icons.favorite),
-              title: const Text('Favorite'),
-            ),
-            FlashyTabBarItem(
-              icon: const Icon(Icons.person),
-              title: const Text('Profile'),
-            ),
-          ],
-        ),
+    return Scaffold(
+      body: Center(
+        child: tabItems[_selectedIndex],
+      ),
+      bottomNavigationBar: FlashyTabBar(
+        animationCurve: Curves.linear,
+        selectedIndex: _selectedIndex,
+        iconSize: 35,
+        showElevation: true,
+        onItemSelected: (index) => setState(() {
+          _selectedIndex = index;
+        }),
+        items: [
+          FlashyTabBarItem(
+            icon: const Icon(Icons.home),
+            title: const Text('Home'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(Icons.search),
+            title: const Text('Search'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(Icons.favorite),
+            title: const Text('Favorite'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(Icons.person),
+            title: const Text('Profile'),
+          ),
+        ],
       ),
     );
   }
