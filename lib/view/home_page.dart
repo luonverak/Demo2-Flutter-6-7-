@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
         onItemSelected: (index) => setState(() {
           _selectedIndex = index;
         }),
+        animationDuration: const Duration(milliseconds: 800),
         items: [
           FlashyTabBarItem(
             icon: const Icon(Icons.home),
