@@ -73,12 +73,12 @@ class HomeScreen extends StatelessWidget {
                   child: CarouselSlider(
                     items: [
                       Container(
-                        width: 250,
+                        width: 240,
                         color: Colors.blue,
                       )
                     ],
                     options: CarouselOptions(
-                      height: 300,
+                      height: 280,
                       viewportFraction: 0.7,
                       enableInfiniteScroll: true,
                       autoPlay: true,
