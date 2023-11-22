@@ -186,7 +186,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.all(5.0),
+              padding: EdgeInsets.only(left: 8, right: 8),
               child: Row(
                 children: [
                   Text(
@@ -207,8 +207,8 @@ class HomeScreen extends StatelessWidget {
                   primary: false,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                     childAspectRatio: 1 / 1.4,
                   ),
                   itemBuilder: (context, index) => shoeItem(listShoe[index]),

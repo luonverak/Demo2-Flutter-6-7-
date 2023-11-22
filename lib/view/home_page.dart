@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
         child: tabItems[_selectedIndex],
       ),
       bottomNavigationBar: FlashyTabBar(
+        height: 55,
         animationCurve: Curves.linear,
         selectedIndex: _selectedIndex,
         iconSize: 35,
