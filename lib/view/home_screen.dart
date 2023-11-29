@@ -209,9 +209,10 @@ class HomeScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    childAspectRatio: 1 / 1.4,
+                    childAspectRatio: 1 / 1.3,
                   ),
-                  itemBuilder: (context, index) => shoeItem(listShoe[index]),
+                  itemBuilder: (context, index) =>
+                      shoeItem(context, listShoe[index]),
                 ),
               ),
             )
