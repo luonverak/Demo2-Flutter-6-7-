@@ -22,47 +22,52 @@ Widget shoeItem(BuildContext context, ShoeModel model) {
             GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailScreen(
-                        shoeModel: model,
-                      ),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      shoeModel: model,
+                    ),
+                  ),
+                );
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: double.infinity,
-                    height: 150,
-                    child: Center(
-                      child: SimpleShadow(
-                        opacity: 0.8,
-                        color: model.color,
-                        offset: const Offset(5, 5),
-                        sigma: 9,
-                        child: Image.asset(
-                          model.image,
-                          fit: BoxFit.cover,
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: double.infinity,
+                        height: 150,
+                        child: Center(
+                          child: SimpleShadow(
+                            opacity: 0.8,
+                            color: model.color,
+                            offset: const Offset(5, 5),
+                            sigma: 9,
+                            child: Image.asset(
+                              model.image,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  Text(
-                    model.name,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Lato2',
-                    ),
-                  ),
-                  Text(
-                    '\$ ${model.price}',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Lato',
-                    ),
+                      Text(
+                        model.name,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Lato2',
+                        ),
+                      ),
+                      Text(
+                        '\$ ${model.price}',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Lato',
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

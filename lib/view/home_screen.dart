@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:demo3/model/category_model.dart';
 import 'package:demo3/model/shoe_model.dart';
+import 'package:demo3/view/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:simple_shadow/simple_shadow.dart';
@@ -91,36 +92,53 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
-                                    width: double.infinity,
-                                    height: 170,
-                                    child: Center(
-                                      child: SimpleShadow(
-                                        opacity: 0.8,
-                                        color: listShoe[index].color,
-                                        offset: const Offset(5, 5),
-                                        sigma: 9,
-                                        child: Image.asset(
-                                          listShoe[index].image,
-                                          fit: BoxFit.cover,
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => DetailScreen(
+                                              shoeModel: listShoe[index]),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    listShoe[index].name,
-                                    style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Lato2',
-                                    ),
-                                  ),
-                                  Text(
-                                    '\$ ${listShoe[index].price}',
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Lato',
+                                      );
+                                    },
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          width: double.infinity,
+                                          height: 170,
+                                          child: Center(
+                                            child: SimpleShadow(
+                                              opacity: 0.8,
+                                              color: listShoe[index].color,
+                                              offset: const Offset(5, 5),
+                                              sigma: 9,
+                                              child: Image.asset(
+                                                listShoe[index].image,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          listShoe[index].name,
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Lato2',
+                                          ),
+                                        ),
+                                        Text(
+                                          '\$ ${listShoe[index].price}',
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Lato',
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Row(
